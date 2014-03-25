@@ -1,0 +1,176 @@
+%%-------------------------------------------------------------------
+%% Definición del tipo de documento
+%%-------------------------------------------------------------------
+%\documentclass[twocolumn,10pt]{C:/texmf/tex/IEEEtran}  %para usar la libreria en español activa esta línea y desactiva la siguiente
+\documentclass[onecolumn]{IEEEtran}            %para usar la libreria en ingles activa esta línea y desactiva la anterior
+%%-------------------------------------------------------------------
+%% Paquetes y librerías que se van a cargar
+%%-------------------------------------------------------------------
+\usepackage[spanish]{babel,varioref}
+\selectlanguage{spanish}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphics,graphicx,color,colortbl}
+\usepackage{times}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsmath,amssymb,amsfonts,amsbsy}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[all]{xy}
+\usepackage[centerlast, small]{caption}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue, breaklinks=true]{hyperref}
+%\usepackage[dvips, pdfstartview=FitH, bookmarks=true,hypertexnames=false, letterpaper,linktocpage,colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue, breaklinks=true]{hyperref}
+%%-------------------------------------------------------------------
+%% Inicio del documento
+%%-------------------------------------------------------------------
+\begin{document}
+%%-------------------------------------------------------------------
+%% Título
+%%-------------------------------------------------------------------
+\title{Informe Taller de MatLab 1}
+%%-------------------------------------------------------------------
+%% Autor y otros datos
+%%-------------------------------------------------------------------
+\author{David Ricardo Martínez Hernández Código: 261931}
+\maketitle
+
+\markboth{Universidad Nacional de Colombia}{}
+
+%%-------------------------------------------------------------------
+%% Otras definciones en español
+%%-------------------------------------------------------------------
+\floatname{algorithm}{Algoritmo}
+%%---------------------------------------------------------
+%% Resumen y Palabras clave
+%%--------------------------------------------------------
+%\begin{abstract}
+%.
+%\end{abstract}
+
+%\begin{keywords}
+%.
+%\end{keywords}
+%%---------------------------------------------------------
+%% Cuerpo del trabajo
+%%--------------------------------------------------------- 
+\section{Primer punto}
+\noindent
+EL primer punto de este taller recibe cualquier vector de cualquier tamaño es decir
+$$XV = [a_1 ,a_2 ,a_3 ,...,a_{n - 1} a_n ]$$
+es necesario escribirlo en esta sintaxis para que pueda ser reconocido por el programa, esto se hace en la ventana principal de MatLab después de inicializar el programa.\\
+
+\subsection{Vector J}
+\noindent
+La función a graficar y analizar es
+
+\begin{equation}
+	y[n] = \sum\limits_{n - n_0 }^{n + n_0 } {x[k]}
+		\label{ecu1}
+\end{equation}
+
+\noindent
+EL valor de $n_0$ es ingresado por el usuario al igual que el vector de entrada.\\
+Si el vector de entrada es $\delta [n - 3]$, al evaluarlo en la ecu. \ref{ecu1}, solo se vera un pulso en la posición (del gráfico) en $-3$, como es una sumatoria va a dar como resultado $1$, y este resultado se encuentra en este caso en $-3$.\\
+El valor de $n_0$ tiene que ser un número entre $0 \le n < \infty$.\\
+Para cada $YV[i]$, se debe de sumar todos los valores de $XV[n]$, definidos sobre el intervalo, como se han definido dos variables se deben utilizar dos \textit{for} anidados, el primero recorre todo el vector de entrada, mientras que el segundo recorre el intervalo de la \textit{suma}, que para este caso en especial es el intervalo de la \textbf{sumatoria}, es acumulada por la suma de los datos en la variable suma, además como esta en un for cuando termine de recorrer el intervalo de la sumatoria asigna el valor de la suma en el vector $S$ siendo este la salida que se va a graficar.
+
+\subsection{Vector J}
+\noindent
+La función a graficar y analizar es
+\begin{equation}
+	y[n] = \left\{ {\begin{array}{*{20}c}   0 & {x[n] < 0}  \\
+   {x[n] + x[n - 2]} & {x[n] \ge 0}  \\
+   \end{array}} \right\}
+   	\label{ecu2}
+\end{equation}
+\noindent
+La ecu. \ref{ecu2} recorre todo el vector de entrada (XV) por medio del comando for, iniciando la variable suma1, al igual que el anterior recorre nuevamente el vector tomando en cuenta la condición ${x[n] + x[n - 2]}$ para ${x[n] \ge 0}$ en caso contrario asignara valores los valores para que se cumpla la condición $0$ para ${x[n] < 0}$.
+
+\section{Segundo punto}
+\noindent
+Para este punto el vector se encuentra definido con $T = 3$($0 < n \le 3$) y la función $x[n] = \frac{A}{n}$, donde $A = 4$.
+
+\subsection{Parte A}
+\noindent
+La función a graficar es
+\begin{equation}
+	x[n]
+	\label{ecu3}
+\end{equation}
+\noindent
+como es periódica con periodo $3$, se concateno el vector \textbf{XV} para mostrar la señal periódica.
+
+\subsection{Parte B}
+\noindent
+La función a graficar es
+\begin{equation}
+	x[2-4n]
+	\label{ecu4}
+\end{equation}
+\noindent
+Se definió el intervalo de interés, como son $3$ muestras, se recorre de $1$ a $3$, el vector \textbf{YT}, es asignado a partir de la función \textbf{XT1} (Vector concatenado del vector XV), el vector \textbf{YT1} es el vector concatenado de la salida YT. los indicies de XV1 fueron calculados de tal forma que no generara conflicto con los valores a elegir.
+$$
+\begin{array}{l}
+ x - 4n = 10,n = 1 \\ 
+ x - 4\left( 1 \right) = 10,x = 14 \\ 
+ \end{array}
+$$
+\noindent
+de ahí salieron los índices del for, quedando de la siguiente manera $14-4*i$, donde $i$ es la asignación del vector recorrido.
+
+\subsection{Parte C}
+\noindent
+La función a graficar es
+\begin{equation}
+	x\left[ {\frac{n}{4}} \right]
+	\label{ecu5}
+\end{equation}
+\noindent
+Se creo un vector concatenado \textbf{XV4} que esta compuesto por $9$ vectores XV, el vector \textbf{YV1} se le asignaron ceros a lo largo de su dimensión, con el fin que en donde no este definida esta función le agregue ceros. Para que este definida o tenga un valor el indicie debe ser múltiplo de $4$, esta salida de YV1, se concatena en un vector YV2.
+
+
+\subsection{Parte D}
+\noindent
+La función a graficar es
+\begin{equation}
+	x[n]*\delta [n + 2]
+	\label{ecu6}
+\end{equation}
+\noindent
+Se creo la señal impulso $\delta$ como vector, sin importar su dimensión, y se le hizo convolución con la señal de entrada $x[n]$.\\
+\noindent
+A esta salida no se le pudieron concordar los indicies de la gráfica, como es sabido al hacer la convolución de una señal cualquiera con un señal impulso, da como resultado la señal original desplaza al lugar del impulso.
+
+\subsection{Parte E}
+La función a graficar es
+\begin{equation}
+	x[n]u[1-n]
+	\label{ecu6}
+\end{equation}
+\noindent
+Se definió un vector XV2 (vector concatenado de XV) y u (señal impulso), de igual tamaño, con la peculiaridad que en la posición central del vector u se encontrara la primera señal del impulso, esto con el fin que al momento de ser reflejado no se alterara el resultado, también se dejaron de igual tamaño para poder hacer la multiplicación de cada posición del vector y que no faltara ninguno.
+
+\section{Punto tres}
+\noindent
+La función a analizar es
+\begin{equation}
+	A\frac{{dy\left( t \right)}}{{dt}} + By\left( t \right) = C\frac{{dx\left( t \right)}}{{dt}} + Dx\left( t \right)
+	\label{ecu7}
+\end{equation}
+\noindent
+El usuario define los valores de A, B, C, D, $\delta$ y XV (vector de entrada), el análisis matemático para poder resolver esta ecuación diferencial es
+$$A\frac{{y\left( {t\Delta } \right) - y\left( {\left( {t - 1} \right)\Delta } \right)}}{\Delta } + By\left( t \right) = C\frac{{x\left( {t\Delta } \right) - x\left( {\left( {t - 1} \right)\Delta } \right)}}{\Delta } + Dx\left( t \right)$$
+$$y[n] = y\left( {t\Delta } \right);x[n] = x\left( {t\Delta } \right)$$
+$$A\frac{{y\left[ n \right] - y\left[ {n - 1} \right]}}{\Delta } + By\left[ n \right] = C\frac{{x\left[ n \right] - x\left[ {n - 1} \right]}}{\Delta } + Dx\left[ n \right]$$
+$$A\left( {y\left[ n \right] - y\left[ {n - 1} \right]} \right) + B\Delta y\left[ n \right] = C\left( {x\left[ n \right] - x\left[ {n - 1} \right]} \right) + D\Delta x\left[ n \right]$$
+$$y[n]\left( {A + B\Delta } \right) - Ay[n - 1] = y[n]\left( {C + D\Delta } \right) - Cy[n - 1]$$
+$$y[n] = \frac{{y[n]\left( {C + D\Delta } \right) - Cy[n - 1] + Ay[n - 1]}}{{\left( {A + B\Delta } \right)}}$$
+\noindent
+Con este análisis y el programa creado, su puede solucionar cual ecuación diferencial, pero el valor de XV es de un vector de $n$ datos.
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass[10pt,graphicx,caption,rotating]{article}
+\textheight=24cm
+\textwidth=18cm
+\topmargin=-2cm
+\oddsidemargin=0cm
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[tbtags]{amsmath}
+\usepackage{cite}
+\usepackage[all]{xy}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsmath,amssymb,amsfonts,amsbsy}
+\usepackage{bm}
+\usepackage[all]{xy}
+\usepackage[centerlast, small]{caption}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue, breaklinks=true]{hyperref}
+\begin{document}
+\title{Informe de Matlab}
+\author{David Ricardo Martínez Hernández Código: $261931$}
+\maketitle
+
+\end{document}

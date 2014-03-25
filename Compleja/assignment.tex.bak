@@ -1,0 +1,44 @@
+\documentclass[10pt,graphicx,caption,rotating]{article}
+\textheight=24cm
+\textwidth=18cm
+\topmargin=-2cm
+\oddsidemargin=0cm
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[tbtags]{amsmath}
+\usepackage{cite}
+\usepackage[all]{xy}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsmath,amssymb,amsfonts,amsbsy}
+\usepackage{bm}
+\usepackage[all]{xy}
+\usepackage[centerlast, small]{caption}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue, breaklinks=true]{hyperref}
+
+\begin{document}
+\begin{figure}[H]
+    \begin{minipage}[t]{1cm}
+    \centering
+        \subfigure[Señal Original]{\includegraphics[scale=0.65]{1.png}}
+    \end{minipage}
+    \hfill\begin{minipage}[t]{9cm}
+    \centering
+        \subfigure[Con 1 coeficiente]{\includegraphics[scale=0.65]{2.png}}
+    \end{minipage}
+    \hfill\begin{minipage}[t]{9cm}
+    \centering
+        \subfigure[Con 2 coeficiente]{\includegraphics[scale=0.65]{3.png}}
+    \end{minipage}
+    \hfill\begin{minipage}[t]{9cm}
+    \centering
+        \subfigure[Con 3 coeficiente]{\includegraphics[scale=0.65]{4.png}}
+    \end{minipage}
+            \label{fig2}
+\end{figure}
+
+\end{document} 
